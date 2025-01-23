@@ -245,7 +245,7 @@ def create_grid_image(images, hole_numbers, grid_size=3, margin_size=20):
     
     # Load a font for the hole numbers (you might need to adjust the font size)
     try:
-        font = ImageFont.truetype("Arial.ttf", 160)
+        font = ImageFont.truetype("Arial-Bold", 80)
     except:
         font = ImageFont.load_default()
 
@@ -269,7 +269,7 @@ def create_grid_image(images, hole_numbers, grid_size=3, margin_size=20):
             text_position = (x_position + number_margin, y_position + number_margin)
             
             # Draw white background circle for better visibility
-            circle_radius = 60
+            circle_radius = 30
             circle_bbox = (
                 text_position[0] - circle_radius,
                 text_position[1] - circle_radius,
