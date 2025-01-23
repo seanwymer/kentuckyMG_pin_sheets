@@ -248,7 +248,7 @@ def create_grid_image(images, hole_numbers, grid_size=3, margin_size=20):
         # Try multiple font options
         for font_name in ["Arial Bold", "DejaVuSans-Bold", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"]:
             try:
-                font = ImageFont.truetype(font_name, 40)
+                font = ImageFont.truetype(font_name, 30)
                 # st.write(f"Successfully loaded font: {font_name}")
                 break
             except:
