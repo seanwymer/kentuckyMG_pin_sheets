@@ -243,10 +243,18 @@ def create_grid_image(images, hole_numbers, grid_size=3, margin_size=20):
     grid_image = Image.new('RGB', (grid_image_width, grid_image_height), 'white')
     draw = ImageDraw.Draw(grid_image)
     
-    # Load a font for the hole numbers (you might need to adjust the font size)
+     # Load a font for the hole numbers
     try:
-        font = ImageFont.truetype("Arial-Bold", 80)
+        # Try multiple font options
+        for font_name in ["Arial Bold", "DejaVuSans-Bold", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"]:
+            try:
+                font = ImageFont.truetype(font_name, 40)
+                # st.write(f"Successfully loaded font: {font_name}")
+                break
+            except:
+                continue
     except:
+        # st.write("Falling back to default font")
         font = ImageFont.load_default()
 
     # Draw each image into the grid
@@ -276,7 +284,7 @@ def create_grid_image(images, hole_numbers, grid_size=3, margin_size=20):
                 text_position[0] + circle_radius,
                 text_position[1] + circle_radius
             )
-            draw.ellipse(circle_bbox, fill='white', outline='black', width=2)
+            draw.ellipse(circle_bbox, fill='white', outline='black', width=3)
             
             # Draw the hole number
             text = str(hole_number)
@@ -287,7 +295,7 @@ def create_grid_image(images, hole_numbers, grid_size=3, margin_size=20):
             
             # Center text in circle
             text_x = text_position[0] - text_width/2
-            text_y = text_position[1] - text_height/2
+            text_y = text_position[1] - text_height/2 - 8  # Subtract more pixels to move up
             draw.text((text_x, text_y), text, fill='black', font=font)
 
     return grid_image
