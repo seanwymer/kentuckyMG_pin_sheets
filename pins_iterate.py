@@ -295,7 +295,7 @@ def create_grid_image(images, hole_numbers, grid_size=3, margin_size=20):
             
             # Center text in circle
             text_x = text_position[0] - text_width/2
-            text_y = text_position[1] - text_height/2 - 8  # Subtract more pixels to move up
+            text_y = text_position[1] - text_height/2 - 7  # Subtract more pixels to move up
             draw.text((text_x, text_y), text, fill='black', font=font)
 
     return grid_image
