@@ -245,7 +245,7 @@ def create_grid_image(images, hole_numbers, grid_size=3, margin_size=20):
     
     # Load a font for the hole numbers (you might need to adjust the font size)
     try:
-        font = ImageFont.truetype("Arial.ttf", 40)
+        font = ImageFont.truetype("Arial.ttf", 80)
     except:
         font = ImageFont.load_default()
 
@@ -358,7 +358,7 @@ def create_pdf_with_grids(front_grid, back_grid, event_name, course_name, round_
     c.save()
     return output_path
 
-st.title("Event List Viewer")
+st.title("Kentucky Men's Golf Pin Sheets")
 
 cookie = '_rails_app_session=VDU2eFcxMk1WT3pUL1JmUG9XU25pSWJVbEg2aEJvU2gwbGpzYTlmK0p2UElHalVrelFpRWQ3MGg1alRpMlNXZ1dRck1PTlQzN2ZFVDRzZXB2L0dRdU5HRWhXQ08xNEtVSU1TK3hWN2xUUUhTell3dXhYUzdlbUJYWEpYZjVzVm1PaDBBcGtabkg4WFlRODZXT3J6RXRhNlRSZkJ4b0hKVzhRdWFjcDF3MGVYQkNsYVZRa1RHN2Qxc0htOXI5M1crREdNMlM3OVo3aUFYTys0Nmg0UGpITW9EQjZRalk1TnVueFpqWFdlM0Y0RHJ3M00vTHMzNnlOREptNDFXOGsvTC0tbU1CVm9EcVcwZ25qcStjM0hjbU1oUT09--acf6a1944c6f787f5416da085bbfdcbd6262fdf8; path=/; secure; HttpOnly'  # Replace with actual cookie
 
